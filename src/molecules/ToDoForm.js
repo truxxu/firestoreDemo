@@ -26,6 +26,10 @@ const ToDoForm = () => {
   //     });
   // };
 
+  const addToDo = () => {
+    console.log('added!');
+  };
+
   return (
     <React.Fragment>
       <View style={styles.container}>
@@ -36,10 +40,7 @@ const ToDoForm = () => {
           rules={{required: true}}
           style={inputStyle}
         />
-        <Button
-          title="Add"
-          // onPress={handleSubmit(addToDo)}
-        />
+        <Button title="Add" onPress={handleSubmit(addToDo)} />
       </View>
       <InputError text="Plase enter some text" error={errors.text} />
     </React.Fragment>

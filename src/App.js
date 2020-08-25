@@ -1,10 +1,12 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
+import {ToDoForm} from './molecules';
+
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text>Demo</Text>
+      <ToDoForm />
     </View>
   );
 };
