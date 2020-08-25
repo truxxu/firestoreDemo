@@ -9,25 +9,15 @@ const inputStyle = {
   width: '85%',
 };
 
-const ToDoForm = () => {
+const ToDoForm = ({todosRef}) => {
   const {control, handleSubmit, errors} = useForm();
 
-  // const todosRef = firebase.firestore().collection('todos');
-  // console.log(todosRef);
-
-  // const addToDo = ({text}) => {
-  //   todosRef
-  //     .add({text})
-  //     .then((res) => {
-  //       console.log('completed');
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
-  const addToDo = () => {
-    console.log('added!');
+  const addToDo = async ({text}) => {
+    try {
+      await todosRef.add({text, completed: false});
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   return (
