@@ -4,7 +4,7 @@ import {View, Text} from 'react-native';
 const App = () => {
   return (
     <View>
-      <Text>Firestore Demo</Text>
+      <Text>Demo</Text>
     </View>
   );
 };
