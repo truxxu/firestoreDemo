@@ -9,8 +9,8 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <ToDoList todosRef={todosRef} />
       <ToDoForm todosRef={todosRef} />
+      <ToDoList todosRef={todosRef} />
     </View>
   );
 };
@@ -18,9 +18,6 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
     padding: 35,
   },
 });

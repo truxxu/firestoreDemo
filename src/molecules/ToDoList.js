@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, FlatList} from 'react-native';
+import {View, Text, FlatList, StyleSheet} from 'react-native';
 
-import {Spinner} from '../atoms';
+import {Spinner, ToDoCard} from '../atoms';
 
 const ToDoList = ({todosRef}) => {
   const [loading, setLoading] = useState(true);
@@ -33,14 +33,28 @@ const ToDoList = ({todosRef}) => {
   }
   return (
     <View>
-      <Text>List</Text>
+      <Text style={styles.title}>TODOs List</Text>
       <FlatList
+        style={styles.list}
         data={todos}
         keyExtractor={(item) => item.id}
-        renderItem={({item}) => <Text>{item.text}</Text>}
+        renderItem={({item}) => <ToDoCard {...item} />}
       />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  list: {
+    width: '100%',
+    padding: 5,
+  },
+  title: {
+    marginVertical: 15,
+    fontWeight: 'bold',
+    fontSize: 30,
+    textAlign: 'center',
+  },
+});
 
 export {ToDoList};
